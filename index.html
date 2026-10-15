@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#213e37">
+  <meta name="description" content="O guia do Bonde dos Criativos por Tiradentes e São João del-Rei: 15–18 de outubro de 2026. Roteiros, cafés para trabalhar, gastronomia mineira e descobertas fora do óbvio.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bonde dos Criativos — Tiradentes, 15 a 18 de outubro">
+  <meta property="og:description" content="Roteiro, mapa e planos B do Bonde dos Criativos em Tiradentes. Aprovação em rodada única.">
+  <link rel="icon" href="./assets/crest.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400,0,0;9..144,500,0,0;9..144,600,0,0&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="./data.js" defer></script>
+  <script src="./app.js" defer></script>
+  <title>Bonde dos Criativos — Nosso roteiro</title>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-sprite" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 4h7v7M20 4 10 14M20 14v6H4V4h6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.3 4.3l2.2 2.2m11 11 2.2 2.2m0-15.4-2.2 2.2m-11 11-2.2 2.2"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M4 18h15a4 4 0 0 0 0-8 6.5 6.5 0 0 0-12.5 1.5A3.5 3.5 0 0 0 4 18Z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M5 7v6a5 5 0 0 0 5 5h7M19 17V9a4 4 0 0 0-4-4H8"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10m-7 5h4"/></symbol>
+  </svg>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner container">
+      <a href="#inicio" class="brand" aria-label="Voltar ao início">
+        <img src="./assets/crest.svg" alt="" class="brand-crest"><span class="brand-type">BONDE DOS CRIATIVOS <small>TIRADENTES · 2026</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="#roteiro">Nosso roteiro</a><a href="#lugares">Lugares</a><a href="#mapa">Mapa</a><a href="#historia">A história</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button saved-trigger" id="openSaved" aria-label="Abrir nossos favoritos"><svg><use href="#i-heart"/></svg><span id="savedCount" class="counter">0</span></button>
+        <button id="topShare" class="btn btn-dark btn-small"><svg><use href="#i-share"/></svg><span>Compartilhar</span></button>
+        <button id="menuToggle" class="icon-button mobile-menu" aria-label="Abrir menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+    <nav id="mobileNav" class="mobile-nav" aria-label="Navegação mobile" hidden><a href="#roteiro">Nosso roteiro</a><a href="#lugares">Lugares</a><a href="#mapa">Mapa</a><a href="#historia">A história</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content container">
+        <span class="overline hero-overline"><span class="sparkle">✳</span> Três criativos de folga (mais ou menos)</span>
+        <h1 id="heroTitle">Bonde dos<br><em>Criativos.</em></h1>
+        <p>Quatro dias de pedra, pão de queijo, barroco e festival. O briefing é simples: comer bem, andar bastante e abrir o notebook só quando não tiver jeito.</p>
+        <div class="hero-buttons"><a class="btn btn-cream" href="#roteiro">Começar pelo roteiro <svg><use href="#i-arrow"/></svg></a><button class="btn btn-outline-light" id="heroSave">Votar nos favoritos <svg><use href="#i-heart"/></svg></button></div>
+        <div class="hero-footer"><span>15 — 18 OUT 2026</span><span class="hero-dot">✷</span><span>MINAS GERAIS, BRASIL</span></div>
+      </div>
+      <div class="hero-side-label">ROTEIRO_FINAL_v3_agora_vai · <span>APROVADO</span></div>
+    </section>
+
+    <section class="intro-strip container" aria-label="Resumo da viagem">
+      <div class="intro-cell"><span class="intro-emoji">◷</span><div><strong>Quinta e sexta</strong><small>Trabalho remoto + passeios</small></div></div>
+      <div class="intro-cell"><span class="intro-emoji">✦</span><div><strong>Festival na cidade</strong><small>Semana Criativa, 15 a 18/10</small></div></div>
+      <div class="intro-cell"><span class="intro-emoji">↗</span><div><strong>Sábado livre</strong><small>São João ou Bichinho</small></div></div>
+      <div class="intro-cell"><span class="intro-emoji">⌂</span><div><strong>Nosso ponto de partida</strong><small>Santíssima Trindade · pin no mapa</small></div></div>
+    </section>
+
+    <section class="container essentials-section" aria-label="Informações importantes">
+      <div class="weather-panel">
+        <div class="weather-heading"><div class="weather-title"><span class="weather-icon">☁</span><div><span class="eyebrow">Antes de sair</span><strong>Olho no céu de Minas</strong></div></div><a href="https://portal.inmet.gov.br/" target="_blank" rel="noopener noreferrer" class="text-link">Avisos do INMET <svg><use href="#i-external"/></svg></a></div>
+        <div class="weather-days" id="weatherDays" aria-live="polite"><span class="weather-loading">Consultando a previsão...</span></div>
+        <p class="weather-note" id="weatherNote">Previsão dinâmica. Em caso de chuva forte, troque mirantes e caminhadas por museus, cafés e exposições.</p>
+      </div>
+      <div class="festival-panel"><span class="panel-stamp">EDIÇÃO 10</span><div class="eyebrow light">EXTRAORDINÁRIO NESTA VIAGEM</div><h3>Semana Criativa de<br><em>Tiradentes</em></h3><p>Design, artesanato, cinema e festa pelo centro. Uma semana inteira dedicada a gente criativa: tecnicamente, é pesquisa de referência. Primeira parada: Casa Criativa, para o crachá.</p><a href="https://semanacriativadetiradentes.com.br/portfolio/casa-criativa/" target="_blank" rel="noopener noreferrer" class="festival-link">Ver credenciamento e horários <svg><use href="#i-arrow"/></svg></a></div>
+    </section>
+
+    <section id="roteiro" class="section itinerary-section container">
+      <div class="section-head"><div><span class="eyebrow">01 / A NOSSA AGENDA</span><h2>O cronograma.<br><em>Sem</em> rodada de alteração.</h2></div><p>Encaixado entre o expediente e a fome. Cada refeição vem com plano B (e C), porque criativo que se preze nunca apresenta uma opção só.</p></div>
+      <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Escolher dia do roteiro"></div>
+      <div class="itinerary-layout"><div class="day-content"><div class="day-intro" id="dayIntro"></div><div id="alternateWrap" class="alternate-wrap"></div><div class="timeline" id="timeline"></div></div><aside class="itinerary-aside"><div class="aside-photo"></div><div class="aside-content"><span class="eyebrow">NOTA DA DIREÇÃO DE ARTE</span><h3>Toda porta colorida daqui vai parar num moodboard.</h3><p>Pode fotografar à vontade. A regra é uma só: não vale salvar como “referência” e nunca mais abrir a pasta.</p><a href="#lugares" class="text-link">Descobrir os lugares <svg><use href="#i-arrow"/></svg></a></div></aside></div>
+    </section>
+
+    <section class="quote-band"><div class="container quote-inner"><span class="ornament">✳</span><p>“Se não tiver pão de queijo no meio, a gente reprova o layout.”</p><span class="quote-caption">CRITÉRIO DE APROVAÇÃO DO BONDE</span></div></section>
+
+    <section id="lugares" class="section places-section container">
+      <div class="section-head"><div><span class="eyebrow">02 / O CASTING</span><h2>Os lugares que<br><em>passaram</em> na seleção.</h2></div><p>Igrejas, museus, mesas e cafés. Quem tem Wi-Fi ganhou ponto extra, por motivos de boleto.</p></div>
+      <div class="places-tools"><div class="category-scroll" id="categoryFilters" role="group" aria-label="Filtrar tipos de lugares"></div><label class="search-box"><svg><use href="#i-search"/></svg><input id="searchPlaces" type="search" placeholder="Buscar lugar, comida ou experiência..." aria-label="Buscar lugares"></label></div>
+      <div id="placesGrid" class="places-grid"></div><div id="emptyPlaces" class="empty-places" hidden>Nenhum lugar encontrado. Experimente outro filtro ou termo.</div>
+    </section>
+
+    <section id="mapa" class="section map-section"><div class="container"><div class="section-head"><div><span class="eyebrow">03 / PRA NÃO SE PERDER</span><h2>Vai a pé ou <em>vai de carro?</em></h2></div><p>O ⌂ é a nossa base. Toque num pin para ver a distância e abrir a rota a partir de casa. Spoiler: no centro dá para ir a pé, com ladeira de brinde.</p></div><div class="map-layout"><div class="map-frame"><div class="map-controls" id="mapRegions" role="group" aria-label="Região no mapa"></div><div id="mapCanvas" class="map-canvas" role="region" aria-label="Mapa com a nossa base e os lugares do roteiro"></div><div id="mapFallback" class="map-fallback" hidden>O mapa precisa de internet para carregar. A lista ao lado continua abrindo as rotas no Google Maps.</div><div class="map-legend" aria-hidden="true"><span><i class="map-dot pin-home">⌂</i>Base</span><span><i class="map-dot pin-comer">♨</i>Comer</span><span><i class="map-dot pin-cafe">☕</i>Café</span><span><i class="map-dot pin-historia">⌑</i>História</span><span><i class="map-dot pin-festival">✳</i>Festival</span></div></div><aside class="map-list"><div class="map-list-top"><span class="eyebrow">DO MAIS PERTO AO MAIS LONGE</span><h3 id="mapListTitle">Centro histórico</h3><p id="mapListDesc"></p><p class="map-estimate">Tempos estimados a partir da base (🚶 até ~1,6 km; acima disso, 🚗). Confirme no Google Maps.</p></div><div id="mapPlacesList" class="map-places-list"></div></aside></div></div></section>
+
+    <section class="section history-section container" id="historia"><div class="section-head"><div><span class="eyebrow">04 / PARA OLHAR COM OUTROS OLHOS</span><h2>Repertório,<br><em>porque a gente cobra isso dos outros.</em></h2></div><p>O contexto que explica por que cada igreja, chafariz e casarão está onde está.</p></div><div class="history-layout"><div class="history-story"><p class="history-lead">Tiradentes nasceu do ouro, foi marcada pela sociedade colonial e ganhou o nome atual depois da Proclamação da República.</p><p>O antigo Arraial Velho de Santo Antônio tornou-se Vila de São José em 1718. Em 1789, a Inconfidência Mineira contestou aspectos do domínio português, mas foi denunciada antes de deflagrar uma revolta. Joaquim José da Silva Xavier, o Tiradentes, foi executado em 1792 e tornou-se símbolo republicano.</p><p>A beleza barroca da cidade também tem um lado essencial de sua história: o trabalho de pessoas escravizadas sustentou a economia colonial e a construção de parte desse patrimônio. A Igreja do Rosário dos Pretos ajuda a compreender as irmandades negras e a experiência de seus membros.</p><a class="text-link" href="https://www.gov.br/iphan/pt-br" target="_blank" rel="noopener noreferrer">Conhecer o trabalho do IPHAN <svg><use href="#i-external"/></svg></a></div><div class="history-dates"><div><span>Início do séc. XVIII</span><strong>Ouro e formação do arraial</strong></div><div><span>1718</span><strong>Vila de São José</strong></div><div><span>1789</span><strong>Inconfidência Mineira</strong></div><div><span>1792</span><strong>Execução de Tiradentes</strong></div><div><span>1889</span><strong>O nome Tiradentes</strong></div></div></div></section>
+
+    <section class="food-section section"><div class="container food-layout"><div class="food-copy"><span class="eyebrow light">05 / PEQUENOS PRAZERES</span><h2>Uma lista para<br><em>comer Minas.</em></h2><p>Marquem o que já provaram. É uma competição, sim: quem provar mais escolhe o próximo restaurante.</p><div class="food-illustration" aria-hidden="true">✷ <span>êta, trem bão</span> ✷</div></div><div class="food-checks"><div class="food-checks-heading"><span>Nosso caderno de sabores</span><small id="foodProgress">0 de 8 provados</small></div><div id="foodList"></div></div></div></section>
+
+    <section class="section offbeat-section container"><div class="section-head"><div><span class="eyebrow">06 / FORA DA CAIXINHA</span><h2>Sim, a gente <em>usou a expressão.</em></h2></div><p>Para quem já falou “fora da caixinha” em reunião e quer, pela primeira vez, ir de verdade.</p></div><div class="offbeat-grid"><article class="offbeat-card"><span class="offbeat-index">01</span><div class="offbeat-art art-1">✣</div><h3>O jardim atrás da loja</h3><p>Na Marcas Mineiras, atravesse o espaço de curadoria e descubra um café escondido entre plantas. Uma ótima pausa sem pressa.</p><button class="text-link" data-place="marcas">Conhecer o lugar <svg><use href="#i-arrow"/></svg></button></article><article class="offbeat-card"><span class="offbeat-index">02</span><div class="offbeat-art art-2">✳</div><h3>Arte contemporânea no casario</h3><p>O MARTIR, na Rua Direita, mostra como a produção artística mineira segue viva para além do barroco.</p><button class="text-link" data-place="martir">Conhecer o lugar <svg><use href="#i-arrow"/></svg></button></article><article class="offbeat-card"><span class="offbeat-index">03</span><div class="offbeat-art art-3">✦</div><h3>Uma manhã em Bichinho</h3><p>Oficinas, papel machê, móveis e um almoço de fogão a lenha. Melhor substituir São João do que tentar os dois correndo.</p><button class="text-link" data-place="oficina">Conhecer o lugar <svg><use href="#i-arrow"/></svg></button></article></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div><img src="./assets/crest.svg" alt="" class="footer-crest"><h2>Fim da apresentação.<br><em>Perguntas? Só depois do café.</em></h2></div><div class="footer-actions"><button class="btn btn-cream" id="footerShare">Compartilhar nosso roteiro <svg><use href="#i-share"/></svg></button><button class="footer-back" id="backToTop">Voltar ao começo ↑</button></div></div><div class="footer-bottom"><div><strong>Bonde dos Criativos</strong><small>15 a 18 de outubro de 2026 · Nossa viagem em trio</small></div><p>Horários, preços e atrações sujeitos a mudanças. Confirme antes de sair. Tempos de deslocamento são estimativas.</p></div><details class="credits"><summary>Fontes, créditos de fotografia e transparência</summary><p>Informações de agenda: <a target="_blank" rel="noopener noreferrer" href="https://semanacriativadetiradentes.com.br/">Semana Criativa</a>, <a target="_blank" rel="noopener noreferrer" href="https://concerto.paroquiatiradentes.com.br/">Paróquia de Tiradentes</a> e <a target="_blank" rel="noopener noreferrer" href="https://museudesantana.org.br/visite/planeje-sua-visita/">Museu de Sant'Ana</a>. Previsão: <a target="_blank" rel="noopener noreferrer" href="https://open-meteo.com/">Open-Meteo</a>, avisos: INMET. Mapas: OpenStreetMap (Leaflet) e Google Maps; localização dos pins conferida no Google Maps em outubro de 2026.</p><p>Fotografias (Wikimedia Commons, CC BY-SA 4.0): <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Centro_hist%C3%B3rico_de_Tiradentes-MG_em_2018.jpg">Alex costa maciel — Centro histórico</a>; <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Igreja_Matriz_de_Santo_Antonio_-_Tiradentes_-_MG.jpg">Rejane Sarmento — Matriz</a>; <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Igreja_do_Carmo_-_S%C3%A3o_Jo%C3%A3o_del-Rei.jpg">Gabriel Carvalho Leal — São João del-Rei</a>. Fotografias externas requerem internet. <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/">Licença CC BY-SA 4.0</a>.</p><p>Favoritos, marcações e comidas provadas ficam salvos neste dispositivo; o link de compartilhamento envia uma fotografia das escolhas no momento do envio, não faz sincronização em tempo real.</p></details></div></footer>
+
+  <div class="bottom-nav" aria-label="Acesso rápido"><a href="#roteiro"><svg><use href="#i-calendar"/></svg><span>Roteiro</span></a><a href="#lugares"><svg><use href="#i-search"/></svg><span>Explorar</span></a><a href="#mapa"><svg><use href="#i-pin"/></svg><span>Mapa</span></a><button id="bottomFavorites"><svg><use href="#i-heart"/></svg><span>Salvos</span></button></div>
+
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="savedDrawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden><div class="drawer-header"><div><span class="eyebrow">COMITÊ DE APROVAÇÃO</span><h2 id="drawerTitle">Nossa seleção <span>♡</span></h2></div><button class="icon-button close-overlay" aria-label="Fechar favoritos"><svg><use href="#i-close"/></svg></button></div><div class="drawer-intro">Coração = aprovado. Depois é só mandar para o grupo validar (rodada única, prometo).</div><div class="drawer-tabs" id="drawerTabs"><button data-list="saved" class="active">Favoritos</button><button data-list="visited">Já conhecemos</button></div><div id="drawerItems" class="drawer-items"></div><div class="drawer-bottom"><button id="drawerShare" class="btn btn-dark btn-full">Enviar nossa seleção <svg><use href="#i-share"/></svg></button><button id="drawerCopyText" class="btn btn-light btn-full">Copiar lista para WhatsApp</button></div></aside>
+  <section id="placeModal" class="place-modal" role="dialog" aria-modal="true" aria-labelledby="modalPlaceTitle" hidden><button class="modal-close icon-button close-overlay" aria-label="Fechar detalhes"><svg><use href="#i-close"/></svg></button><div id="placeModalBody"></div></section>
+  <section id="shareModal" class="share-modal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle" hidden><button class="modal-close icon-button close-overlay" aria-label="Fechar compartilhamento"><svg><use href="#i-close"/></svg></button><div class="share-symbol">♡</div><span class="eyebrow">HORA DO ALINHAMENTO</span><h2 id="shareModalTitle">Manda pra<br><em>aprovação.</em></h2><p>O link abre este guia com os favoritos e as visitas marcadas até agora. Cada celular pode continuar escolhendo depois.</p><label for="shareUrl" class="share-label">LINK DO NOSSO GUIA</label><div class="share-copy-field"><input readonly id="shareUrl" type="text" aria-label="Link para compartilhar"><button id="copyShare" class="btn btn-dark">Copiar</button></div><div class="share-modal-actions"><button id="nativeShare" class="btn btn-light"><svg><use href="#i-share"/></svg> Compartilhar no celular</button><button id="copySummary" class="text-link">Ou copiar a seleção em texto <svg><use href="#i-arrow"/></svg></button></div><p class="share-warning" id="shareWarning"></p></section>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

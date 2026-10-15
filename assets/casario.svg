@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Ilustração de um casario colonial mineiro cercado por montanhas">
+ <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d8d9bf"/><stop offset="1" stop-color="#e4ba8e"/></linearGradient></defs>
+ <rect width="900" height="500" fill="url(#sky)"/>
+ <circle cx="676" cy="120" r="78" fill="#f4d5a1" opacity=".7"/>
+ <path d="M0 322Q150 201 290 285T570 252T900 260V500H0" fill="#6f866b" opacity=".65"/>
+ <path d="M0 363Q200 312 359 353T695 309T900 342V500H0" fill="#547561" opacity=".7"/>
+ <path d="M0 413Q195 352 365 382T650 360T900 390V500H0" fill="#344f48"/>
+ <g transform="translate(70 168)">
+ <path d="M0 156L74 118l77 38V300H0Z" fill="#f7ead0"/>
+ <path d="M0 156L74 118l77 38" fill="none" stroke="#a65c46" stroke-width="13"/>
+ <rect x="24" y="194" width="35" height="70" rx="2" fill="#7593a0"/>
+ <rect x="90" y="194" width="35" height="70" rx="2" fill="#7593a0"/>
+ <path d="M23 191h38M88 191h39" stroke="#e9bb7a" stroke-width="7"/>
+ <path d="M151 162l107-29 107 29v138H151" fill="#f3e0bc"/>
+ <path d="M147 160l111-34 114 34" stroke="#9b5343" stroke-width="14" fill="none"/>
+ <rect x="182" y="197" width="42" height="66" fill="#7f8b79"/>
+ <rect x="285" y="197" width="42" height="66" fill="#7f8b79"/>
+ <path d="M260 300v-89h26v89" fill="#9e5b4c"/>
+ </g>
+ <g transform="translate(450 98)">
+ <rect x="23" y="138" width="211" height="250" fill="#f7f1de"/>
+ <path d="M23 138h211" stroke="#ca9b55" stroke-width="15"/>
+ <rect x="7" y="105" width="52" height="284" fill="#f8f2dd" stroke="#c29b57" stroke-width="10"/>
+ <rect x="200" y="105" width="52" height="284" fill="#f8f2dd" stroke="#c29b57" stroke-width="10"/>
+ <path d="M7 105L33 61l26 44M200 105l26-44 26 44" fill="#bf9b65" stroke="#d4b47d" stroke-width="6"/>
+ <rect x="20" y="125" width="25" height="39" rx="12" fill="#32483f"/>
+ <rect x="213" y="125" width="25" height="39" rx="12" fill="#32483f"/>
+ <circle cx="33" cy="190" r="16" fill="#ede0c0" stroke="#9c7350" stroke-width="4"/>
+ <circle cx="226" cy="190" r="16" fill="#ede0c0" stroke="#9c7350" stroke-width="4"/>
+ <rect x="102" y="291" width="53" height="97" rx="25" fill="#9f4c43"/>
+ <rect x="75" y="204" width="37" height="67" rx="18" fill="#769493" stroke="#c29b57" stroke-width="5"/>
+ <rect x="145" y="204" width="37" height="67" rx="18" fill="#769493" stroke="#c29b57" stroke-width="5"/>
+ <circle cx="129" cy="151" r="22" fill="#d2bb8e" stroke="#9c7350" stroke-width="5"/>
+ <path d="M129 75v-30m-9 10h18" stroke="#9c7350" stroke-width="5"/>
+ <path d="M100 142q29-42 58 0" stroke="#c29b57" stroke-width="8" fill="none"/>
+ <path d="M59 136l70-60 71 60" stroke="#e0c191" stroke-width="12" fill="none"/>
+ </g>
+ <path d="M0 469Q350 446 900 464v36H0" fill="#283e37"/>
+</svg>

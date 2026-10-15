@@ -1,0 +1,12 @@
+{
+  "name": "Bonde dos Criativos — Nosso guia de viagem",
+  "short_name": "Bonde dos Criativos",
+  "description": "Guia do Bonde dos Criativos por Tiradentes e São João del-Rei, 15 a 18 de outubro de 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3eb",
+  "theme_color": "#213e37",
+  "lang": "pt-BR",
+  "icons": [{"src":"./assets/crest.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
